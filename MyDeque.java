@@ -107,17 +107,21 @@ public class MyDeque<E> {
       throw new NoSuchElementException();
     E temp = data[start];
     data[start] = null;
-    //set start to new index
+    if (start == data.length-1)
+      start = 0;
+    else start++;
     size--;
     return temp;
   }
-
+  
   public E removeLast(){
     if (data[end] == null)
       throw new NoSuchElementException();
     E temp = data[end];
     data[end] = null;
-    //set end to new index
+    if (end == 0)
+      end = data.length-1;
+    else end--;
     size--;
     return temp;
   }
