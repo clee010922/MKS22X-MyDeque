@@ -23,10 +23,10 @@ public class MyDeque<E> {
 
   @SuppressWarnings("unchecked")
   public void resize(){
-    E[] temp = (E[])new Object[data.length * 2];
+    E[] temp = (E[])new Object[data.length * 2 + 1];
     if (start < end) {
       for (int i = start; i <= end; i++) {
-        temp[i] = data[i];
+        temp[i] = data[i+start];
       }
     }
     if (start > end) {
@@ -40,6 +40,8 @@ public class MyDeque<E> {
         counter++;
       }
     }
+    start = 0;
+    end = size-1;
     data = temp;
   }
 
@@ -113,7 +115,7 @@ public class MyDeque<E> {
     size--;
     return temp;
   }
-  
+
   public E removeLast(){
     if (data[end] == null)
       throw new NoSuchElementException();
