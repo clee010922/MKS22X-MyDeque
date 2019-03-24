@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class MyDeque<E> {
 
   private E[] data;
@@ -69,9 +70,18 @@ public class MyDeque<E> {
     if (element == null) {
       throw new NullPointerException();
     }
-    if (size == data.length)
-      resize();
-    //add
+    if (size == 0) {
+      data[0] = element;
+      end++;
+    }
+    else if (start == 0) {
+      data[data.length-1] = element;
+      start = data.length-1;
+    }
+    else if (start != 0) {
+      data[start-1] = element;
+      start--;
+    }
     size++;
   }
 
