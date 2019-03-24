@@ -147,6 +147,8 @@ public class MyDeque<E> {
 
   }
 
+  //from on here are methods that I've used for debugging
+  /*
   public int start() {
     return start;
   }
@@ -173,5 +175,6 @@ public class MyDeque<E> {
     deque.addLast(5);
     System.out.println(deque);
   }
+  */
 
 }
