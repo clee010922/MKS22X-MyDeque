@@ -6,15 +6,21 @@ public class Calculator {
 
     public static double eval(String s) {
       String[] values = s.split(" ");
-      MyDeque deque = new MyDeque(values.length);
+      MyDeque<Double> deque = new MyDeque<Double>();
       for (int i = 0; i < values.length; i++) {
-        deque.addFirst(values[i]);
-      }
-      int val1 = Integer.parseInt(deque.getFirst());
-      deque.removeFirst();
-      int val2 = Integer.parseInt(deque.getFirst());
-      deque.removeFirst();
-      if (deque.getFirst)
-    }
+        if (values[i].equals("+")) {
+          Double second = deque.getLast();
+          deque.removeLast();
+          Double first = deque.getLast();
+          deque.removeLast();
+          deque.addLast(first + second);
+        }
+        else if (values[i].equals("-")) {
+          Double second = deque.getLast();
+          deque.removeLast();
+          Double first = deque.getLast();
+          deque.removeLast();
+          deque.addLast(first - second);        
+        }
 
 }
