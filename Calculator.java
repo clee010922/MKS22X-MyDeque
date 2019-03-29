@@ -20,7 +20,20 @@ public class Calculator {
           deque.removeLast();
           Double first = deque.getLast();
           deque.removeLast();
-          deque.addLast(first - second);        
+          deque.addLast(first - second);
         }
-
+        else if (values[i].equals("*")) {
+          Double second = deque.getLast();
+          deque.removeLast();
+          Double first = deque.getLast();
+          deque.removeLast();
+          deque.addLast(first * second);
+        }
+        else if (values[i].equals("/")) {
+          Double second = deque.getLast();
+          deque.removeLast();
+          Double first = deque.getLast();
+          deque.removeLast();
+          deque.addLast(first / second);        
+        }
 }
